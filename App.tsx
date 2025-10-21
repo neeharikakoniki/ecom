@@ -3,17 +3,23 @@ import { StyleSheet} from 'react-native';
 import AppText from './src/components/views/AppText';
 import AppSafeView from './src/components/views/AppSafeView';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import React from 'react';
+import FlashMessage, { showMessage} from 'react-native-flash-message';
+import AppTextInput from './src/inputs/AppTextInput';
+import SiginScreen from './src/screens/auth/SiginScreen';
 
 
 export default function App() {
   return (
+    <>
+    <FlashMessage position={"top"}/>
+
     <SafeAreaProvider>
     <AppSafeView>
-      <AppText variant="medium" >Hello Neeha</AppText>
-      <AppText variant= "bold">Hello Neeha</AppText>
-      <StatusBar style="auto" />
+      <SiginScreen/>
     </AppSafeView>
     </SafeAreaProvider>
+    </>
   );
 }
 
