@@ -1,20 +1,22 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet} from 'react-native';
+import AppText from './src/components/views/AppText';
+import AppSafeView from './src/components/views/AppSafeView';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
+    <SafeAreaProvider>
+    <AppSafeView>
+      <AppText variant="medium" >Hello Neeha</AppText>
+      <AppText variant= "bold">Hello Neeha</AppText>
       <StatusBar style="auto" />
-    </View>
+    </AppSafeView>
+    </SafeAreaProvider>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+
 });
