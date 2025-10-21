@@ -1,54 +1,3 @@
-/*
-import { StyleSheet, Text, View, Image } from 'react-native'
-import React, {useState} from 'react'
-import AppSafeView from '../../components/views/AppSafeView'
-import { sharedPaddingHorizontal } from '../../styles/sharedStyles'
-import { IMAGES } from '../../constants/images-paths'
-import {s, vs} from "react-native-size-matters"
-import AppTextInput from '../../inputs/AppTextInput'
-import AppText from '../../components/views/AppText'
-import AppButton from '../../components/views/buttons/AppButton'
-
-
-
-const SiginScreen = () => {
-    const [email,setEmail]= useState("")
-const [password, setPassword] = useState("")
-
-    return (
-        <AppSafeView style={styles.container}>
-            <Image source={IMAGES.appLogo} style={styles.logo}/>
-            <AppTextInput placeholder='Email' onChangeText={setEmail}/>
-            <AppTextInput placeholder='Password' onChangeText={setPassword} secureTextEntry/>
-            <AppText>ShopVerse</AppText>
-            <AppButton title='Login'/>
-            <AppButton title='Sign up'/>
-
-
-
-
-        </AppSafeView>
-
-    )
-}
-
-export default SiginScreen
-
-const styles = StyleSheet.create({
-    container:{
-        alignItems: "center",
-        paddingHorizontal: sharedPaddingHorizontal,
-    },
-    logo:{
-        height: s(150),
-        width:s(150),
-        marginBottom:vs(50),
-        marginLeft: s(20)
-        
-    }
-})
-*/
-
 import { StyleSheet, View, Image } from 'react-native'
 import React, { useState } from 'react'
 import AppSafeView from '../../components/views/AppSafeView'
@@ -59,10 +8,10 @@ import AppTextInput from '../../inputs/AppTextInput'
 import AppText from '../../components/views/AppText'
 import AppButton from '../../components/views/buttons/AppButton'
 
-const SigninScreen = () => {
+const SignUpScreen = () => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
-
+const [username, setUsername] = useState("")
   return (
     <AppSafeView style={styles.container}>
     
@@ -74,18 +23,17 @@ const SigninScreen = () => {
   
       <Image source={IMAGES.appLogo} style={styles.logo} />
   
-      <AppText style={styles.title}>ShopVerse</AppText>
-
+      <AppTextInput placeholder='Username' onChangeText={setUsername} />
       <AppTextInput placeholder='Email' onChangeText={setEmail} />
       <AppTextInput placeholder='Password' onChangeText={setPassword} secureTextEntry />
 
-      <AppButton title='Login' style={styles.button} />
-      <AppButton title='Sign up' style={[styles.button, styles.signupButton]} />
+      <AppButton title='Create New Account' style={styles.button} />
+      <AppButton title='Go to Sign in' style={[styles.button, styles.signupButton]} />
     </AppSafeView>
   )
 }
 
-export default SigninScreen
+export default SignUpScreen
 
 const styles = StyleSheet.create({
   container: {
@@ -97,7 +45,7 @@ const styles = StyleSheet.create({
   },
 
   logo: {
-    height: s(130),
+    height: s(120),
     width: s(130),
    
   },

@@ -7,6 +7,7 @@ import React from 'react';
 import FlashMessage, { showMessage} from 'react-native-flash-message';
 import AppTextInput from './src/inputs/AppTextInput';
 import SiginScreen from './src/screens/auth/SiginScreen';
+import SignUpScreen from './src/screens/auth/SignUpScreen';
 
 
 export default function App() {
@@ -16,7 +17,7 @@ export default function App() {
 
     <SafeAreaProvider>
     <AppSafeView>
-      <SiginScreen/>
+      <SignUpScreen/>
     </AppSafeView>
     </SafeAreaProvider>
     </>
